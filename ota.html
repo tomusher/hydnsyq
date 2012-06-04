@@ -1,0 +1,31 @@
+<head>
+  <title>ota</title>
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js"></script>
+
+</head>
+
+<body>
+{{>main}}
+</body>
+
+<template name="main">
+<h1>Hyd n Syq</h1>
+{{coords}}
+{{#if get}}
+	{{>get}}
+{{else}}
+	{{>set}}
+{{/if}}
+</template>
+
+<template name="get">
+  <p>Decrypting: {{ciphertext}}</p>
+  <p>Result: {{plaintext}}</p>
+</template>
+
+<template name="set">
+  <form id="set-message" name="set-message">
+  <input type="text" id="set-message-text" placeholder="Your Message">
+  <input type="submit" value="Encrypt" />
+  </form>
+</template>
